@@ -62,6 +62,6 @@ for perk_data in shrine_response["perks"]:
     table.add_row(name, description)
 
 # Print the table
-console = Console()
+console = Console(color_system="truecolor") # Setting color_system so the script can be saved to a file with color preserved
 console.print(table)
 
