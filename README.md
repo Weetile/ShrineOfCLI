@@ -17,4 +17,4 @@ python3 main.py # Run the script
 
 ## Screenshots
 
-![image](https://github.com/Weetile/ShrineOfCLI/assets/7700383/ed794b94-f739-41e4-84d8-cde2c95e4203)
+![image](https://i.imgur.com/YfXfyAf.png)
