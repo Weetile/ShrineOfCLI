@@ -10,21 +10,21 @@ def format_description(description, tunables):
 
     def replace_tunables(match):
         nonlocal tunable_index
-        
+
         if isinstance(tunables, list) and tunable_index < len(tunables):
             tunable = tunables[tunable_index]
             if isinstance(tunable, list):
                 tunable = '/'.join(map(str, tunable))
             tunable_index += 1
             return tunable
-        
+
         elif isinstance(tunables, dict) and str(tunable_index) in tunables:
             tunable = tunables[str(tunable_index)]
             if isinstance(tunable, list):
                 tunable = '/'.join(map(str, tunable))
             tunable_index += 1
             return tunable
-        
+
         return match.group(0)  # Return the original string if no tunable is found
 
     # Replace {0}, {1}, etc. with tunables
@@ -36,7 +36,9 @@ def format_description(description, tunables):
         .replace("<b>", "[bold]").replace("</b>", "[/bold]")
         .replace("<br><br>", "<br>").replace("<br>", "\n")
         .replace("<li>", "• ").replace("</li>", "\n")
+        .replace("&nbsp;", " ")
     )
+
 
 shrine_endpoint = "https://dbd.tricky.lol/api/shrine"
 perks_endpoint = "https://dbd.tricky.lol/api/perks"
